@@ -1,0 +1,43 @@
+<html ng-app="app">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <link href="lib/ztree/css/demo.css" />
+    <link href="lib/ztree/css/zTreeStyle/zTreeStyle.css" />
+
+    <script src="lib/jquery.1.4.4.min.js"></script>
+    <script src="lib/ztree/js/jquery.ztree.all.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="appCtrl">
+        {{firstName}} - {{lastName}}
+        <br/>
+        <button ng-click="changeName()" say-hello="changeName()">changeName</button>
+        element
+        <hello first-name='firstName' last-name="lastName" say-hello="changeName()">-china-</hello>
+        <br/> attribute
+        <div hello first-name="firstName" last-name="lastName" say-hello="changeName()"></div>
+        <br/> class
+        <div class=“hello” first-name="firstName" last-name="lastName" say-hello="changeName()"></div>
+        <br/> commit
+        <!-- directive : hello first-name="firstName" last-name="lastName" -->
+
+        <br/> 自定义指令
+        <dropdown-tree id="2" column="firstName"></dropdown-tree>
+        <dropdown-tree id="1" column="lastName"></dropdown-tree>
+
+        <br/>自定义级联
+        <cascade firstValue="" secondValue="" threeValue=""></cascade>
+        
+    </div>
+    <script src="lib/angularjs.1.2.30.js"></script>
+    <script src="app.js"></script>
+    <script src="app/directive/hello.js"></script>
+    <script src="app/directive/cascade/cascade.js"></script>
+    <script src="app/directive/dropdownTree.js"></script>
+</body>
+
+</html>
